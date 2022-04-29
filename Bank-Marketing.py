@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.tree import DecisionTreeClassifier
 
 url = 'bank-full.csv'
 data = pd.read_csv(url)
@@ -98,7 +98,7 @@ print(f'accuracy de Test de Entrenamiento: {svc.score(x_test, y_test)}')
 print(f'accuracy de Validación: {svc.score(x_test_out, y_test_out)}')
 
 
-# ARBOL DE DECISIÓN de regresion
+# ARBOL DE DECISIÓN
 
 # Seleccionar un modelo
 arbol = DecisionTreeClassifier()
@@ -121,24 +121,3 @@ print(f'accuracy de Test de Entrenamiento: {arbol.score(x_test, y_test)}')
 print(f'accuracy de Validación: {arbol.score(x_test_out, y_test_out)}')
 
 
-# ARBOL DE DECISIÓN
-
-# Seleccionar un modelo
-arbol1 = DecisionTreeRegressor()
-
-# Entreno el modelo
-arbol1.fit(x_train, y_train)
-
-# MÉTRICAS
-
-print('*'*50)
-print('Decisión Tree')
-
-# Accuracy de Entrenamiento de Entrenamiento
-print(f'accuracy de Entrenamiento de Entrenamiento: {arbol1.score(x_train, y_train)}')
-
-# Accuracy de Test de Entrenamiento
-print(f'accuracy de Test de Entrenamiento: {arbol1.score(x_test, y_test)}')
-
-# Accuracy de Validación
-print(f'accuracy de Validación: {arbol1.score(x_test_out, y_test_out)}')
